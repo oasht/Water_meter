@@ -1,0 +1,23 @@
+﻿<Window x:Class="Water_meter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Water_meter"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+        Title="Water Meter" Height="450" Width="800" FontSize="35">
+    <Window.DataContext>
+        <local:Meter/>
+    </Window.DataContext>
+    <StackPanel>
+        <TextBlock Text="Name:"/>
+        <TextBox Text="{Binding Name}"/>
+        <TextBlock Text="Model:"/>
+        <TextBox Text="{Binding Model}"/>
+        <TextBlock Text="CheckDate"/>
+        <DatePicker SelectedDate="{Binding CheckDate }"/>
+        <TextBlock x:Name= "tb_temp" Text="Cold"/>
+        <CheckBox x:Name="cb1" Click="CheckBox_Click" IsChecked="{Binding Temp}" ></CheckBox>
+    </StackPanel>
+</Window>
